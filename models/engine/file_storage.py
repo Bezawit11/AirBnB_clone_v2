@@ -53,8 +53,8 @@ class FileStorage:
         """to delete obj from __objects if it’s inside """
         if obj is None:
             return
-        a = obj.to_dict()['__class__']
-        b = a + "." + obj.id
-        if b in self.__objects.keys():
-            del self.__objects[b]
+        a = obj.to_dict()['__class__'] + "." + obj.id
+        if a in self.__objects.keys():
+            del self.__objects[a]
+ 
             
