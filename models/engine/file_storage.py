@@ -1,13 +1,6 @@
 #!/usr/bin/python3
 """This module defines a class to manage file storage for hbnb clone"""
 import json
-from models.base_model import BaseModel
-from models.user import User
-from models.place import Place
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.review import Review
 
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
@@ -33,6 +26,13 @@ class FileStorage:
 
     def reload(self):
         """Loads storage dictionary from file"""
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.place import Place
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.review import Review
 
         classes = {
                     'BaseModel': BaseModel, 'User': User, 'Place': Place,
@@ -49,11 +49,12 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """to delete obj from __objects if it’s inside """
+        ''' deletes the object obj from the attribute
+            __objects if it's inside it
+        '''
         if obj is None:
             return
-        a = obj.to_dict()['__class__'] + "." + obj.id
-        if a in self.__objects.keys():
-            del self.__objects[a]
+        obj_key = obj.to_dict()['__class__'] + '.' + obj.id
+        if obj_key in self.__objects.keys():
+            del self.__objects[obj_key] 
  
-            
