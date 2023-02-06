@@ -30,11 +30,10 @@ def Python_is_fun(text=None):
         text = "is cool"
     return 'Python ' + text.replace('_', ' ')
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def is_integer(n):
     """displays a number"""
-    if (type(n) is int):
-    	return str(n) + ' is a number'
+    return str(n) + ' is a number'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
