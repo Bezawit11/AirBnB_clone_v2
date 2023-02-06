@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+
 """
+
 a script that starts a Flask web application
+
 """
 
 from flask import Flask
@@ -28,6 +31,12 @@ def Python_is_fun(text=None):
     if text is None:
         text = "is cool"
     return 'Python ' + text.replace('_', ' ')
+
+@app.route('/number/<n>', strict_slashes=False)
+def is_integer(n):
+    """displays a number"""
+    if (type(n) is int):
+    	return n + ' is a number'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
