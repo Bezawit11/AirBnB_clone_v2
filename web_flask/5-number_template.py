@@ -36,9 +36,9 @@ def is_integer(n):
     return str(n) + ' is a number'
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def is_integer(n):
+def is_int(n):
     """displays a number"""
-    return render_template("templates/5-number.html")
+    return render_template("templates/5-number.html", n=n)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
