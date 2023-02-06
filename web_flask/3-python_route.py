@@ -21,8 +21,8 @@ def C_is_fun(text):
     """display the text variable"""
     return 'C ' + text.replace('_', ' ')
 
-@app.route('/python/(<text>)', strict_slashes=False)
-def Python_is_fun(text):
+@app.route('/python/<text>', strict_slashes=False)
+def Python_is_fun(text=None):
     """display the text variable"""
     if text is None:
         text = "is cool"
