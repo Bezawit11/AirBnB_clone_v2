@@ -19,7 +19,8 @@ def hello():
 
 @app.route('/c/<text>', strict_slashes=False)
 def C_is_fun():
-    return 'C %s' % escape(text)
+    """display the text variable"""
+    return 'C %s' % escape(text.replace("_", " "))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
