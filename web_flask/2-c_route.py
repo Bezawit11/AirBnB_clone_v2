@@ -18,7 +18,7 @@ def hello():
     return 'HBNB'
 
 @app.route('/c/<text>', strict_slashes=False)
-def C_is_fun():
+def C_is_fun(text):
     """display the text variable"""
     return 'C ' + text.replace('_', ' ')
 
