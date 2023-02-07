@@ -12,6 +12,7 @@ import models
 
 storage_type = getenv("HBNB_TYPE_STORAGE")
 
+
 class State(BaseModel, Base):
     '''
         Implementation for the State.
