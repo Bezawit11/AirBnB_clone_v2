@@ -16,10 +16,7 @@ def tear_down(self):
 
 @app.route('/states_list', strict_slashes=False)
 def list_states():
-    """lists states from database
-    Returns:
-        HTML
-    """
+    """lists states from database"""
     z_states = storage.all(State)
     all_states = []
     for key, value in z_states.items():
