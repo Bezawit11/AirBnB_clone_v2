@@ -4,7 +4,7 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        <H1>State: {k.name}</H1>
+        <H1>State: {{ k.name }}</H1>
         <H3>Cities:</H3>
         <UL>
            {% for c in k.cities | sort(attribute="name") %}
