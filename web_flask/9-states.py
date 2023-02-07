@@ -25,7 +25,7 @@ def list_states():
     
    
 @app.route('/states/<id>', strict_slashes=False)
-def list_by_id():
+def list_by_id(id):
     """display a HTML page if object id matches"""
     z_states = storage.all(State)
     all_states = []
