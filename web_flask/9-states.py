@@ -34,7 +34,7 @@ def list_by_id(id):
         all_states.append(value)
     for i in all_states:
             kid.append(i.id)
-    return render_template('9-states.html', kid=kid, id=id)
+    return render_template('9-states.html', kid=kid, id=id, all_states=all_states)
 
 
 if __name__ == "__main__":
