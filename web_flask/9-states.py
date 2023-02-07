@@ -29,13 +29,12 @@ def list_by_id(id):
     """display a HTML page if object id matches"""
     z_states = storage.all(State)
     all_states = []
-    k = []
+    kid = []
     for key, value in z_states.items():
         all_states.append(value)
     for i in all_states:
-        if i.id == id:
-            k.append(i)
-            return render_template('9-states.html', k=k)
+            kid.append(i.id)
+    return render_template('9-states.html', kid=kid, id=id)
 
 
 if __name__ == "__main__":
