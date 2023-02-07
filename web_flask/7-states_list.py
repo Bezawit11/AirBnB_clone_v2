@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def tear_down(self):
-    """tear down app context"""
+    """remove the current SQLAlchemy Session"""
     storage.close()
 
 
@@ -20,10 +20,10 @@ def list_states():
     Returns:
         HTML
     """
-    dict_states = storage.all(State)
+    z_states = storage.all(State)
     all_states = []
-    for k, v in dict_states.items():
-        all_states.append(v)
+    for key, value in z_states.items():
+        all_states.append(value)
     return render_template('7-states_list.html', all_states=all_states)
 
 
