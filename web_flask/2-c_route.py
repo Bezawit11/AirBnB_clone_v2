@@ -12,10 +12,12 @@ def hello_hbnb():
     """display Hello HBNB!"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hello():
     """display hbnb"""
     return 'HBNB'
+
 
 @app.route('/c/<text>', strict_slashes=False)
 def C_is_fun(text):
