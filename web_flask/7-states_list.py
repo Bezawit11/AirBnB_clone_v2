@@ -24,7 +24,6 @@ def list_states():
     all_states = []
     for key, value in z_states.items():
         all_states.append(value)
-    all_states = sorted(all_states)
     return render_template('7-states_list.html', all_states=all_states)
 
 
